@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex"  onload="task009Action('addRandomData')">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                  <div class="bg-gray-50 rounded-b w-full lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                      <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                      <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                    </div>
+                  </div>
+                </div>
+              <br/>
+
+              <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 w-full flex-col justify-between leading-normal">
+                  <div class="mb-8">
+                     
+                    <div class="w-full flex-grow p-6">
+                    <div class="flex p-4 mb-4 text-sm space-x-4 text-gray-800 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+                      
+                      <div class="flex flex-col justify-between p-4 leading-normal">
+                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Bank Client actions:</h5>
+                          <br><br>
+                          <div class="inline-flex rounded-md space-x-4 w-full" role="group">
+                          
+                              <div class="relative">
+                                <input type="number" value="20" id="inputAmount" class="block rounded-t-lg px-2.5 pb-1.5 pt-4 w-32 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                                <label for="inputAmount" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Amount:</label>
+                              </div>
+
+                              <button type="button" onclick="task009Action('deposit')" class="tooltip text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800 dark:hover:bg-gray-500">
+                                <span class="tooltiptext">Deposit amount</span>  
+                                <i class='fas fa-plus-circle' style='font-size:24px'></i>
+                              </button>
+              
+                              <button type="button" onclick="task009Action('withdrawal')" class="tooltip text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800 dark:hover:bg-gray-500">
+                                <span class="tooltiptext">Withdrawal amount</span>  
+                                <i class='fas fa-minus-circle' style='font-size:24px'></i>
+                              </button>
+              
+                              <button type="button" onclick="task009Action('balance')" class="tooltip text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800 dark:hover:bg-gray-500">
+                                <span class="tooltiptext">Show balance</span> 
+                                <i class='fa fa-history' style='font-size:24px'></i>
+                              </button>
+                              <br><br>
+                              <button type="button" onclick="task009Action('addRandomData')" class="tooltip text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800 dark:hover:bg-gray-500">
+                                <span class="tooltiptext">Clear amount. Deposit/Withdrawal random money</span>   
+                                <i class='fas fa-folder-plus' style='font-size:24px'></i>
+                              </button>
+               
+                          </div>
+                         
+                      </div>
+                    </div>
+                    </div>
+
+                    <p id="output"></p>  
+                   
+                   </div>
+
+                </div>
+              </div>
+              <br>
+
+               
+              
+              <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+</body>
+</html>

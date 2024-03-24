@@ -1,0 +1,80 @@
+<main class="w-full flex-grow p-6">
+  <!-- Content Start -->
+
+  <div class="relative overflow-x-auto w-full">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                  Алгоритм
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  max=10, size=10 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  max=100, size=1000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  max=100, size=100000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  max=10000, size=100000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  max=1000000, size=100000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MaxMin, size=100000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  MinMax=10, size=100000 (ns/op);(allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Allocs (allocs/op)
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  TimeRun (MM:SS)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .Values}}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Name}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test01}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test02}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test03}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test04}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test05}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test06}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Test07}}
+                </td>
+                <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                  {{.Allocs}}
+                </td>
+                <td class="px-6 py-4">
+                  {{.TimeRun}}
+                </td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</div>
+
+  <!-- Content End -->
+</main>

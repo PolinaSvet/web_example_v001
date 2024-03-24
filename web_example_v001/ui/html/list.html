@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">List tasks</h1>
+
+                <!-- Content Start -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {{range.}}
+					<a href="{{.Link}}"
+						class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
+						<img src="{{.Image}}" alt="" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+						<div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 to-transparent opacity-100"></div>
+						<p class="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                            {{.Describe}}<br/>
+                            {{.Name}}<br/>
+                        </p>
+					</a>
+                    {{end}}
+				</div>
+                <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+</body>
+</html>

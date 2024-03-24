@@ -1,0 +1,66 @@
+{
+    "Ben": {
+        "Name": "Ben",
+        "LastName": "BenLName",
+        "Age": 45,
+        "Gender": "male",
+        "Crimes": 8,
+        "Photo": "/ui/static/img/criminal/ben.jpg"
+    },
+    "Dick": {
+        "Name": "Dick",
+        "LastName": "DickLName",
+        "Age": 20,
+        "Gender": "male",
+        "Crimes": 77,
+        "Photo": "/ui/static/img/criminal/dick.jpg"
+    },
+    "Kate": {
+        "Name": "Kate",
+        "LastName": "KateLName",
+        "Age": 17,
+        "Gender": "female",
+        "Crimes": 5,
+        "Photo": "/ui/static/img/criminal/kate.jpg"
+    },
+    "Lena": {
+        "Name": "Lena",
+        "LastName": "LenaLName",
+        "Age": 45,
+        "Gender": "female",
+        "Crimes": 7,
+        "Photo": "/ui/static/img/criminal/lena.jpg"
+    },
+    "Luci": {
+        "Name": "Luci",
+        "LastName": "LuciLName",
+        "Age": 98,
+        "Gender": "female",
+        "Crimes": 20,
+        "Photo": "/ui/static/img/criminal/luci.jpg"
+    },
+    "Max": {
+        "Name": "Max",
+        "LastName": "MaxLName",
+        "Age": 16,
+        "Gender": "male",
+        "Crimes": 89,
+        "Photo": "/ui/static/img/criminal/max.jpg"
+    },
+    "Stive": {
+        "Name": "Stive",
+        "LastName": "StiveLName",
+        "Age": 18,
+        "Gender": "male",
+        "Crimes": 77,
+        "Photo": "/ui/static/img/criminal/stive.jpg"
+    }, 
+    "Tom": {
+        "Name": "Tom",
+        "LastName": "TomLName",
+        "Age": 20,
+        "Gender": "male",
+        "Crimes": 1,
+        "Photo": "/ui/static/img/criminal/tom.jpg"
+    }
+}

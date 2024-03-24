@@ -1,0 +1,14 @@
+<main class="w-full flex-grow p-6">
+  <!-- Content Start -->
+
+  <div">
+      {{range .Values}}
+        <p >
+          {{.Name}}<br/>  
+          {{.Data}}<br/><br>            
+        </p>
+      {{end}}
+  </div>
+
+  <!-- Content End -->
+</main>

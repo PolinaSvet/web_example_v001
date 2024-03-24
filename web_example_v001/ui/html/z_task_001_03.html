@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-50 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                        <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                      </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Выберите месяц:</div>
+                        <select id="monthSelect">
+                            {{range .Months}}
+                            <option value="{{.NameEn}}" data-image="{{.Image}}" data-describe="{{.Describe}}" data-nameRu="{{.NameRu}}">{{.NameEn}}</option>
+                            {{end}}
+                        </select>
+
+                        <div id="monthNameRu" class="text-gray-900 font-bold text-xl mb-2">Выбранное значение: </div>
+                        <div style="float: left; width: 20%;">
+                            <img id="monthImage" src="/ui/static/img/months/m_00.png" alt="Month Image">
+                        </div>
+                        <div style="float: right; width: 75%;">
+                            <p id="monthDescribe">Информация по выбранному месяцу...</p>
+                        </div>
+
+                      </div>
+                    </div>
+                </div>
+                
+                <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+
+    <script>
+        const select = document.getElementById("monthSelect");
+        const image = document.getElementById("monthImage");
+        const describe = document.getElementById("monthDescribe");
+        const nameRu = document.getElementById("monthNameRu");
+
+        select.addEventListener("change", function() {
+            const selectedOption = select.options[select.selectedIndex];
+
+            image.src = selectedOption.getAttribute("data-image");
+            describe.innerText = selectedOption.getAttribute("data-describe");
+            nameRu.innerText = "Выбранный месяц: "+ selectedOption.getAttribute("data-nameRu");
+        });
+    </script>
+
+</body>
+</html>

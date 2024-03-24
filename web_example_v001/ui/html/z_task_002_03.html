@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-50 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                        <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                      </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Немного посчитаем:</div>
+                        
+                        <div class="relative">
+                            <input type="text" value="(((1 + 1) * (4 - 2)) / 2.5) - 5" id="inputbox" class="w-80 block rounded-t-lg px-2.5 pb-1.5 pt-4 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                            <label for="inputbox" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Введите математическое выражение:</label>
+                        </div>
+                        <br>
+
+                        <input type="button" value="Вычислить" onclick="submitForm()" class="w-40 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"></button>
+                        <br>
+                        
+                        <p id="output"></p>
+
+                      </div>
+                    </div>
+                </div>
+                
+                <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            var inputValue = document.getElementById("inputbox").value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/process_task_002_03_calc", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("output").innerHTML = xhr.responseText;
+                }
+            };
+            var data = "input=" + encodeURIComponent(inputValue);
+            xhr.send(data);
+        }
+    </script>
+
+    {{template "block_script"}}
+</body>
+</html>

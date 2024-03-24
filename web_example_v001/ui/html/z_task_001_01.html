@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-50 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                        <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                      </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Код:</div>
+                        <p class="text-gray-700 text-base" style="white-space: pre;">
+{{.TaskCode}}
+                        </p>
+                        <footer class="w-full bg-white text-left p-4">
+                          Проверяем код: <a target="_blank" href="https://go.dev/play/" class="underline">https://go.dev/play/</a>
+                        </footer>
+                      </div>
+                    </div>
+                </div>
+                
+                <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+</body>
+</html>

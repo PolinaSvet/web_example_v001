@@ -1,0 +1,56 @@
+[
+  {
+    "brand": "BMW",
+    "model": "X5",
+    "length": 485.7,
+    "width": 222.2,
+    "height": 176.6,
+    "maxSpeed": 210, 
+    "enginePower": 245
+  },
+  {
+    "brand": "BMW",
+    "model": "M6",
+    "length": 489.8,
+    "width": 222.2,
+    "height": 107.0,
+    "maxSpeed": 250, 
+    "enginePower": 560
+  },
+  {
+    "brand": "Mercedes",
+    "model": "CLA",
+    "length": 468.8,
+    "width": 222.1,
+    "height": 143.9,
+    "maxSpeed": 216, 
+    "enginePower": 136
+  },
+  {
+    "brand": "Mercedes",
+    "model": "C-class",
+    "length": 458.1,
+    "width": 150,
+    "height": 144.7,
+    "maxSpeed": 225, 
+    "enginePower": 156
+  },
+  {
+    "brand": "Dodge",
+    "model": "Charger",
+    "length": 198.46,
+    "width": 75,
+    "height": 58.15,
+    "maxSpeed": 250, 
+    "enginePower": 296
+  },
+  {
+    "brand": "Dodge",
+    "model": "Challenger",
+    "length": 188.46,
+    "width": 190.5,
+    "height": 68.15,
+    "maxSpeed": 250, 
+    "enginePower": 296
+  }
+]

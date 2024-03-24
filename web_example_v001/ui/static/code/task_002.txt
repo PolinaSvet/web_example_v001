@@ -1,0 +1,55 @@
+package main
+
+import (
+ "fmt"
+ "os"
+)
+
+func main() {
+
+ fmt.Print("Введите первое число: ")
+ var num1 float64
+ _, err := fmt.Scanln(&num1)
+ if err != nil {
+  fmt.Println("Ошибка чтения первого числа:", err)
+  os.Exit(1)
+ }
+
+ fmt.Print("Введите арифметический оператор (+, -, *, /): ")
+ var operator string
+ _, err = fmt.Scanln(&operator)
+ if err != nil {
+  fmt.Println("Ошибка чтения арифметического оператора:", err)
+  os.Exit(1)
+ }
+
+ fmt.Print("Введите второе число: ")
+ var num2 float64
+ _, err = fmt.Scanln(&num2)
+ if err != nil {
+  fmt.Println("Ошибка чтения второго числа:", err)
+  os.Exit(1)
+ }
+
+ // Выполнение арифметического действия и вывод результата
+ var result float64
+ switch operator {
+ case "+":
+  result = num1 + num2
+ case "-":
+  result = num1 - num2
+ case "*":
+  result = num1 * num2
+ case "/":
+  if num2 == 0 {
+   fmt.Println("Ошибка: деление на ноль недопустимо")
+   os.Exit(1)
+  }
+  result = num1 / num2
+ default:
+  fmt.Println("Ошибка: неподдерживаемый оператор")
+  os.Exit(1)
+ }
+
+ fmt.Println("Результат:", result)
+}

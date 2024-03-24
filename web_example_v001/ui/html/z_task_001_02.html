@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-50 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                        <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                      </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                    <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                      <div class="mb-8">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Выберите месяц:</div>
+                        <form method="get" action="/z_task_001_02">
+                            <select name="selected" onchange="this.form.submit();">
+                            {{range .Values}}
+                            <option value="{{.}}" {{if eq . $.Selected}}selected{{end}}>{{.}}</option>
+                            {{end}}
+                            </select>
+                            <!--<input type="submit" value="Отправить">-->
+                        </form>
+                        <div id="monthNameRu" class="text-gray-900 font-bold text-xl mb-2">Выбранное значение: {{.SelectedNameRu}}</div>
+                        <div>
+                            {{if .Selected}}
+                            <div style="float: left; width: 20%;">
+                                <img id="monthImage" src={{.SelectedImage}} alt="Month Image">
+                            </div>
+                            <div style="float: right; width: 75%;">
+                                <p id="monthDescribe">{{.SelectedDescribe}}</p>
+                            </div>
+                            {{end}}
+                        </div> 
+                      </div>
+                    </div>
+                </div>
+                
+                <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+</body>
+</html>

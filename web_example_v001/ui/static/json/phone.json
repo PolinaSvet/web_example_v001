@@ -1,0 +1,140 @@
+[
+  {
+    "brand": "samsung",
+    "model": "A40",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "Nokia",
+    "model": "B5",
+    "buttons": 20,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "",
+    "model": "a56",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "Samsung",
+    "model": "X777",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "Samsung",
+    "model": "RRR",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "",
+    "model": "",
+    "buttons": 56,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "",
+    "model": "",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "",
+    "model": "",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "ff",
+    "model": "ggg",
+    "buttons": 20,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "",
+    "model": "fvsdv",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "ewe",
+    "model": "er",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "выа",
+    "model": "екуе",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "ыпк",
+    "model": "кыеыип",
+    "buttons": 77,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "ww",
+    "model": "ww",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "ww",
+    "model": "ww",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "111",
+    "model": "222",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "",
+    "model": "rt",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "1",
+    "model": "2",
+    "buttons": 20,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "2",
+    "model": "3",
+    "buttons": 20,
+    "view": "radioPhone"
+  },
+  {
+    "brand": "ty",
+    "model": "tye",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "1",
+    "model": "2",
+    "buttons": 0,
+    "view": "androidPhone"
+  },
+  {
+    "brand": "1",
+    "model": "1",
+    "buttons": 0,
+    "view": "applePhone"
+  },
+  {
+    "brand": "1",
+    "model": "1",
+    "buttons": 20,
+    "view": "radioPhone"
+  }
+]

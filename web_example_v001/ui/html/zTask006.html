@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+{{template "block_head"}}
+<body class="bg-gray-100 font-family-karla flex">
+	{{template "block_left_menu"}}
+    <div class="relative w-full flex flex-col h-screen overflow-y-hidden">
+        {{template "block_desktop_header"}}
+        <!-- Desktop Header -->
+        <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
+            <main class="w-full flex-grow p-6">
+                <h1 class="text-3xl text-black pb-6">{{.PageDescribe}}</h1>
+                <h3 class="text-3xl text-black pb-6">{{.PageName}}</h3>
+
+                <!-- Content Start -->
+
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                  <div class="bg-gray-50 rounded-b w-full lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                      <div class="text-gray-900 font-bold text-xl mb-2">Задание:</div>
+                      <p class="text-gray-700 text-base">{{.PageTask}}</p>
+                    </div>
+                  </div>
+                </div>
+              <br/>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex shadow-lg">
+                  <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+                      <div class="text-gray-900 font-bold text-xl mb-2">Исходные параметры:</div>
+                      
+                      <div class="relative">
+                          <input type="number" value="10" id="inputboxSize" class="block rounded-t-lg px-2.5 pb-1.5 pt-4 w-64 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                          <label for="inputboxSize" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Введите размер массива:</label>
+                      </div>
+                      <br>
+
+                      <div class="relative">
+                          <input type="number" value="100" id="inputboxMax" class="block rounded-t-lg px-2.5 pb-1.5 pt-4 w-64 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
+                          <label for="inputboxMax" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Введите max число:</label>
+                      </div>
+                      <br>
+
+                      <div class="relative">
+                        <select id="inputboxAsc" class="block rounded-t-lg px-2.5 pb-1.5 pt-4 w-64 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                            <option value="true">возрастанию</option>
+                            <option value="false">убыванию</option>
+                        </select>
+                        <label for="inputboxAsc" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Сортировать по:</label>
+                      </div>
+                      <br>
+
+                      <input type="button" value="Показать" onclick="showSortArray006()" class="w-64 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"></button>
+                      <br>
+
+                      <div class="text-gray-900 font-bold text-xl mb-2">Результаты сортировок:</div>
+
+                      <p id="output"></p>
+                      
+                     </div>
+ 
+                  </div>
+                </div>
+                <br>
+
+                <div class="w-full lg:max-w-full shadow-lg">
+                  <div class="bg-gray-100 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div class="mb-8">
+
+                      <div class="text-gray-900 font-bold text-xl mb-2">Сводная таблица производительности всех алгоритмов:</div>
+                       
+                      <div class="relative overflow-x-auto w-full">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                      Алгоритм
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      max=10, size=10 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      max=100, size=1000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      max=100, size=100000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      max=10000, size=100000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      max=1000000, size=100000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      MaxMin, size=100000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      MinMax=10, size=100000 (ns/op);(allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      Allocs (allocs/op)
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                      TimeRun (MM:SS)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{range .ValuesData}}
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Name}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test01}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test02}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test03}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test04}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test05}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test06}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Test07}}
+                                    </td>
+                                    <td class="px-6 py-4 bg-white border-r dark:bg-gray-800 dark:border-gray-700">
+                                      {{.Allocs}}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                      {{.TimeRun}}
+                                    </td>
+                                </tr>
+                                {{end}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+
+
+                      <div class="text-gray-900 font-bold text-xl mb-2">Тест производительности одного алгоритма (с учетом выделенных ресурсов на сервере, время ожидания может быть ооооочень долгим):</div>
+
+                      <div class="relative">
+                        <select id="inputboxTypeSort" class="block rounded-t-lg px-2.5 pb-1.5 pt-4 w-64 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                            {{range $index, $element := .Values}}
+                            <option value="{{$index}}">{{$element}}</option>
+                            {{end}}
+                        </select>
+                        <label for="inputboxTypeSort" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-3 scale-75 top-3 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Выбор алгоритма для проверки:</label>
+                      </div>
+                      <br>
+
+                      <input type="button" value="Тест" onclick="showSortArrayTest006()" class="w-64 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"></button>
+                      <br>
+                      
+                      <p id="outputTest"></p>
+
+                    </div>
+                  </div>
+                </div>
+              
+              <!-- Content End -->
+
+            </main>
+    
+            {{template "block_footer"}}
+        </div>
+    </div>
+    {{template "block_script"}}
+</body>
+</html>
