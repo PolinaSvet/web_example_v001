@@ -116,5 +116,14 @@ func InitVariable() error {
 	var_.PageHTML = "ui/html/zTask009.html"
 	var_.Task = "Напишите структуру, которая будет реализовывать клиент для клиента банковского приложения."
 	ListTasksAll = append(ListTasksAll, var_) //12
+
+	//task_010
+	var_.Image = "/ui/static/img/task_010.jpg"
+	var_.Name = "Задания № 17.3.1, 17.3.3, 17.6.1, 17.6.2, 17.6.3, 17.7.1"
+	var_.Describe = "Модуль 17. Синхронизация с использованием атомиков и каналов<br/>"
+	var_.Link = "/zTask010/"
+	var_.PageHTML = "ui/html/zTask010.html"
+	var_.Task = "-"
+	ListTasksAll = append(ListTasksAll, var_) //13
 	return nil
 }

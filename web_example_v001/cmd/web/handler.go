@@ -36,6 +36,7 @@ const (
 	Task008Page       string = "ui/html/zTask008.html"
 	Task009Page       string = "ui/html/zTask009.html"
 	Task009PList      string = "ui/html/zTask009list.html"
+	Task010Page       string = "ui/html/zTask010.html"
 
 	ErrorLogURL     string = "/errorLog/"
 	Task_001_01_URL string = "/z_task_001_01/"
@@ -52,6 +53,8 @@ const (
 	Task008URL      string = "/zTask008/"
 	Task008URLData  string = "/data"
 	Task009URL      string = "/zTask009/"
+	Task010URL      string = "/zTask010/"
+	Task010URLData  string = "/dataChannel"
 
 	Task_001_01_Code string = "ui/static/code/task_001.txt"
 	Task_002_01_Code string = "ui/static/code/task_002.txt"
@@ -65,7 +68,16 @@ const (
 	MonthsInfo_image string = "/ui/static/img/months/m_00.png"
 )
 
+var channelTask10 chan string
+var stopChannelTask10 chan bool
+var flagXTask10 bool = true
+var flagTask10 *bool = &flagXTask10
+
 func Handler() {
+
+	channelTask10 = make(chan string)
+	stopChannelTask10 = make(chan bool)
+	*flagTask10 = true
 
 	mux := http.NewServeMux()
 	fileServer := http.FileServer(NeuteredFileSystem{http.Dir("ui")})
@@ -116,6 +128,11 @@ func Handler() {
 
 	mux.HandleFunc("/zTask009/", ServeHTTPTask009)
 	mux.HandleFunc("/processHandlerTask009Action", processHandlerTask009Action)
+
+	mux.HandleFunc("/zTask010/", ServeHTTPTask010)
+	mux.HandleFunc("/dataChannel", processHandlerTask010RefreshData)
+	mux.HandleFunc("/start", processHandlerTask010Start)
+	mux.HandleFunc("/stop", processHandlerTask010Stop)
 
 	fmt.Println("Server is listening...")
 	err := http.ListenAndServe(":8080", mux)

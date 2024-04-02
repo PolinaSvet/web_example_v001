@@ -283,6 +283,27 @@ function task009Action(action) {
     xhr.send(JSON.stringify(data));  
 }
 
+//task_010
+function task010Action(action) {
+
+	var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/processHandlerTask010Action", true);
+    xhr.setRequestHeader("Content-Type", "application/json");  
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200 && action == 1) {
+        document.getElementById("outputFind").innerHTML = xhr.responseText;
+      }
+    };
+
+    var data = {
+      inputString1Val: document.getElementById("inputString1").value,
+      inputString2Val: document.getElementById("inputString2").value,
+      actionVal:   action,
+    };
+
+    xhr.send(JSON.stringify(data));  
+}
+
 
 
 
